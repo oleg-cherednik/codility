@@ -1,1 +1,0 @@
-# cop.swing.section-manager
