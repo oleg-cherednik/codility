@@ -31,6 +31,7 @@ import java.util.Stack;
  * <ul>
  * <li>expected worst-case time complexity is O(N);</li>
  * <li>expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</li>
+ * </ul>
  * Elements of input arrays can be modified.
  *
  * @author Oleg Cherednik

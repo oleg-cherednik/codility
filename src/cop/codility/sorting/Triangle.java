@@ -46,6 +46,7 @@ import java.util.Arrays;
  * <ul>
  * <li>expected worst-case time complexity is O(N*log(N));</li>
  * <li>expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).</li>
+ * </ul>
  * Elements of input arrays can be modified.
  *
  * @author Oleg Cherednik

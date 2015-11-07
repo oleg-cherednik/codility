@@ -23,12 +23,13 @@ package cop.codility.stacks_and_queues;
  * Assume that:
  * <ul>
  * <li>N is an integer within the range [0..100,000,000];</li>
- * <li>string S consists only of the characters "(" and/or ")"..</li>
+ * <li>string S consists only of the characters "(" and/or ")".</li>
  * </ul>
  * Complexity:
  * <ul>
  * <li>expected worst-case time complexity is O(N);</li>
  * <li>expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).</li>
+ * </ul>
  * Elements of input arrays can be modified.
  *
  * @author Oleg Cherednik
