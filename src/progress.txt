@@ -1,0 +1,34 @@
+Lesson 3: Time Complexity
+FrogJmp
+PermMissingElem
+TapeEquilibrium
+
+Lesson 4: Counting Elements
+MissingInteger
+PermCheck
+GrogRiverOne
+MaxCounter
+
+Lesson 5: Prefix Sums
+CountDiv
+PassingCars
+GenomicRangeQuery
+MinAvgTwoSlice
+
+Lesson 6: Sorting
+Distinct
+MacProductOfThree
+Triangle
+*NumberOfDiscIntersections
+
+Lesson 7: Stacks and Queues
+Brackets
+*StoneWall
+Fish
+Nesting
+
+Lesson 8: Leader
+*Dominator
+*EquiLeader
+
+
