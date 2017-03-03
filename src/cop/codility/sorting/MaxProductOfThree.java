@@ -2,8 +2,8 @@ package cop.codility.sorting;
 
 /**
  * <h1>MaxProductOfThree</h1>
- * <i>Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).</i><br>
- * <br>
+ * <i>Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).</i>
+ * <p/>
  * A non-empty zero-indexed array A consisting of N integers is given. The <i>product</i> of triplet (P, Q, R) equates to A[P] * A[Q] * A[R] (0 <= P
  * < Q < R < N).
  * <p/>

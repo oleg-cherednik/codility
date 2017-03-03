@@ -5,8 +5,8 @@ import java.util.TreeSet;
 
 /**
  * <h1>MissingInteger</h1>
- * <i>Find the minimal positive integer not occurring in a given sequence.</i><br>
- * <br>
+ * <i>Find the minimal positive integer not occurring in a given sequence.</i>
+ * <p/>
  * Write a function:
  * <pre>
  * class Solution { public int solution(int[] A); }

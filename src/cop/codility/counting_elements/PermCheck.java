@@ -5,8 +5,8 @@ import java.util.Set;
 
 /**
  * <h1>PermCheck</h1>
- * <i>Check whether array A is a permutation.</i><br>
- * <br>
+ * <i>Check whether array A is a permutation.</i>
+ * <p/>
  * A non-empty zero-indexed array A consisting of N integers is given.<br>
  * A <i>permutation</i> is a sequence containing each element from 1 to N once, and only once.
  * <p/>

@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * <h1>MaxCounters</h1>
  * <i>Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current
- * maximum.</i><br>
- * <br>
+ * maximum.</i>
+ * <p/>
  * You are given N counters, initially set to 0, and you have two possible operations on them:
  * <ul>
  * <li><i>increase(X)</i> ? counter X is increased by 1,</li>

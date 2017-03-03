@@ -5,8 +5,8 @@ import java.util.Set;
 
 /**
  * <h1>FrogRiverOne</h1>
- * <i>Find the earliest time when a frog can jump to the other side of a river.</i><br>
- * <br>
+ * <i>Find the earliest time when a frog can jump to the other side of a river.</i>
+ * <p/>
  * A small frog wants to get to the other side of a river. The frog is currently located at position 0, and wants to get to position X. Leaves fall
  * from a tree onto the surface of the river.<br>
  * You are given a non-empty zero-indexed array A consisting of N integers representing the falling leaves. A[K] represents the position where one

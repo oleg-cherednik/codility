@@ -1,3 +1,12 @@
+Lesson 1: Iterations
+--------------------
+BinaryGap - 100%
+
+Lesson 2: Arrays
+----------------
+OddOccurrencesInArray - 100%
+CyclicRotation - 100%
+
 Lesson 3: Time Complexity
 -------------------------
 FrogJmp - 100%
@@ -23,14 +32,14 @@ Lesson 6: Sorting
 Distinct - 100%
 MacProductOfThree - 100%
 Triangle - 100%
-*NumberOfDiscIntersections
+NumberOfDiscIntersections
 
 Lesson 7: Stacks and Queues
 ---------------------------
-Brackets
-*StoneWall
-Fish
-Nesting
+Brackets - 100%
+StoneWall
+Fish - 100%
+Nesting - 100%
 
 Lesson 8: Leader
 ----------------
