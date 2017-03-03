@@ -79,7 +79,7 @@ public class NumberOfDiscIntersections {
         }
 
         res -= A.length * (A.length + 1L) / 2;
-        return res > 10000000 ? -1 : (int)res;
+        return res <= 10000000 ? (int)res : -1;
     }
 
     public static void main(String... args) {
