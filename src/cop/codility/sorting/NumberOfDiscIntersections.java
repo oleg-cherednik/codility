@@ -1,8 +1,6 @@
 package cop.codility.sorting;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * <h1>NumberOfDiscIntersections</h1>
@@ -54,12 +52,10 @@ import java.util.Map;
  */
 public class NumberOfDiscIntersections {
     public static int solution(int[] A) {
-        int l = A.length;
+        long[] A1 = new long[A.length];
+        long[] A2 = new long[A.length];
 
-        long[] A1 = new long[l];
-        long[] A2 = new long[l];
-
-        for (int i = 0; i < l; i++) {
+        for (int i = 0; i < A.length; i++) {
             A1[i] = (long)A[i] + i;
             A2[i] = -((long)A[i] - i);
         }
@@ -67,7 +63,7 @@ public class NumberOfDiscIntersections {
         Arrays.sort(A1);
         Arrays.sort(A2);
 
-        long cnt = 0;
+        long res = 0;
 
         for (int i = A.length - 1; i >= 0; i--) {
             int pos = Arrays.binarySearch(A2, A1[i]);
@@ -75,52 +71,17 @@ public class NumberOfDiscIntersections {
                 while (pos < A.length && A2[pos] == A1[i]) {
                     pos++;
                 }
-                cnt += pos;
+                res += pos;
             } else { // element not there
                 int insertionPoint = -(pos + 1);
-                cnt += insertionPoint;
+                res += insertionPoint;
             }
 
         }
 
-        long sub = (long)l * ((long)l + 1) / 2;
-        cnt -= sub;
-
-        if (cnt > 1e7)
-            return -1;
-
-        return (int)cnt;
-    }
-
-    private static final Map<Integer, Map<Integer, Integer>> cache = new HashMap<>();
-
-    private static int combination(int n, int k) {
-        if (n < k)
-            return 0;
-        if (n == k)
-            return 1;
-        if (k == 1)
-            return n;
-
-        if (!cache.containsKey(n))
-            cache.put(n, new HashMap<>());
-
-        Map<Integer, Integer> map = cache.get(n);
-
-        if (!map.containsKey(k))
-            map.put(k, combination(n - 1, k - 1) + combination(n - 1, k));
-
-        return map.get(k);
-    }
-
-    private static final class Point {
-        final int pos;
-        int open;
-        int close;
-
-        Point(int pos) {
-            this.pos = pos;
-        }
+        long sub = (long)A.length * ((long)A.length + 1) / 2;
+        res -= sub;
+        return res > 1e7 ? -1 : (int)res;
     }
 
     public static void main(String... args) {
