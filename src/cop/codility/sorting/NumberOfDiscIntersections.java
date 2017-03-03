@@ -56,8 +56,8 @@ public class NumberOfDiscIntersections {
         long[] arr2 = new long[A.length];
 
         for (int i = 0; i < A.length; i++) {
-            arr1[i] = (long)A[i] + i;
-            arr2[i] = i - (long)A[i];
+            arr1[i] = A[i] + (long)i;
+            arr2[i] = (long)i - A[i];
         }
 
         Arrays.sort(arr1);
@@ -75,11 +75,10 @@ public class NumberOfDiscIntersections {
                 res += pos;
             } else
                 // element not there
-                res -= (pos + 1);
-
+                res -= pos + 1;
         }
 
-        long sub = (long)A.length * ((long)A.length + 1) / 2;
+        long sub = A.length * (A.length + 1L) / 2;
         res -= sub;
         return res > 1e7 ? -1 : (int)res;
     }
