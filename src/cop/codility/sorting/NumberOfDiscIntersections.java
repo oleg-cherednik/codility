@@ -57,7 +57,7 @@ public class NumberOfDiscIntersections {
 
         for (int i = 0; i < A.length; i++) {
             arr1[i] = (long)A[i] + i;
-            arr2[i] = -((long)A[i] - i);
+            arr2[i] = i - (long)A[i];
         }
 
         Arrays.sort(arr1);
