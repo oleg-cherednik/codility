@@ -73,10 +73,9 @@ public class NumberOfDiscIntersections {
                     pos++;
                 }
                 res += pos;
-            } else { // element not there
-                int insertionPoint = -(pos + 1);
-                res += insertionPoint;
-            }
+            } else
+                // element not there
+                res -= (pos + 1);
 
         }
 
