@@ -52,23 +52,24 @@ import java.util.Arrays;
  */
 public class NumberOfDiscIntersections {
     public static int solution(int[] A) {
-        long[] A1 = new long[A.length];
-        long[] A2 = new long[A.length];
+        long[] arr1 = new long[A.length];
+        long[] arr2 = new long[A.length];
 
         for (int i = 0; i < A.length; i++) {
-            A1[i] = (long)A[i] + i;
-            A2[i] = -((long)A[i] - i);
+            arr1[i] = (long)A[i] + i;
+            arr2[i] = -((long)A[i] - i);
         }
 
-        Arrays.sort(A1);
-        Arrays.sort(A2);
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
 
         long res = 0;
 
         for (int i = A.length - 1; i >= 0; i--) {
-            int pos = Arrays.binarySearch(A2, A1[i]);
+            int pos = Arrays.binarySearch(arr2, arr1[i]);
+
             if (pos >= 0) {
-                while (pos < A.length && A2[pos] == A1[i]) {
+                while (pos < A.length && arr2[pos] == arr1[i]) {
                     pos++;
                 }
                 res += pos;
