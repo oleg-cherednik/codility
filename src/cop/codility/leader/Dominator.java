@@ -2,8 +2,8 @@ package cop.codility.leader;
 
 /**
  * <h1>Dominator</h1>
- * <i>Find an index of an array such that its value occurs at more than half of indices in the array.</i><br>
- * <br>
+ * <i>Find an index of an array such that its value occurs at more than half of indices in the array.</i>
+ * <p/>
  * A zero-indexed array A consisting of N integers is given. The <i>dominator</i> of array A is the value that occurs in more than half of the
  * elements of A.
  * <p/>
@@ -21,7 +21,7 @@ package cop.codility.leader;
  * class Solution { public int solution(int[] A); }
  * </pre>
  * that, given a zero-indexed array A consisting of N integers, returns index of any element of array A in which the dominator of A occurs. The
- * function should return ?1 if array A does not have a dominator.
+ * function should return -1 if array A does not have a dominator.
  * <p/>
  * Assume that:
  * <ul>
@@ -80,7 +80,7 @@ public class Dominator {
         System.out.println(solution(new int[0]));
         System.out.println(solution(new int[] { 3 }));
         System.out.println(solution(new int[] { 3, 4 }));
-        System.out.println(solution(new int[] { 3, 4, 3, 2, 3, -1, 3, 3 }));
+        System.out.println(solution(new int[] { 2, 3, 4, 3, 2, 3, -1, 3, 3 }));
         System.out.println(solution(new int[] { 3, 4, 3, 2, 3, -1, 3, 5 }));
         System.out.println(solution(new int[] { 2, 1, 1, 3, 4 }));
     }

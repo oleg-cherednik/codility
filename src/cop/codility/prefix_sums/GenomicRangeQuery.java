@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * <h1>GenomicRangeQuery</h1>
- * <i>Find the minimal nucleotide from a range of sequence DNA.</i><br>
- * <br>
+ * <i>Find the minimal nucleotide from a range of sequence DNA.</i>
+ * <p/>
  * A DNA sequence can be represented as a string consisting of the letters A, C, G and T, which correspond to the types of successive nucleotides in
  * the sequence. Each nucleotide has an <i>impact factor</i>, which is an integer. Nucleotides of types A, C, G and T have impact factors of 1, 2, 3
  * and 4, respectively. You are going to answer several queries of the form: What is the minimal impact factor of nucleotides contained in a

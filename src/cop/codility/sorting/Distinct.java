@@ -5,8 +5,8 @@ import java.util.Set;
 
 /**
  * <h1>Distinct</h1>
- * <i>Compute number of distinct values in an array.</i><br>
- * <br>
+ * <i>Compute number of distinct values in an array.</i>
+ * <p/>
  * Write a function:
  * <pre>
  * class Solution { public int solution(int[] A); }

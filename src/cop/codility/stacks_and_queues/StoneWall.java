@@ -2,8 +2,8 @@ package cop.codility.stacks_and_queues;
 
 /**
  * <h1>Nesting</h1>
- * <i>Determine whether given string of parentheses is properly nested.</i><br>
- * <br>
+ * <i>Determine whether given string of parentheses is properly nested.</i>
+ * <p/>
  * A string S consisting of N characters is called <i>properly nested</i> if:
  * <ul>
  * <li>S is empty;</li>

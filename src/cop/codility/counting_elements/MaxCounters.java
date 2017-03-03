@@ -9,8 +9,8 @@ import java.util.Arrays;
  * <p/>
  * You are given N counters, initially set to 0, and you have two possible operations on them:
  * <ul>
- * <li><i>increase(X)</i> ? counter X is increased by 1,</li>
- * <li><i>max counter</i> ? all counters are set to the maximum value of any counter.</li>
+ * <li><i>increase(X)</i> - counter X is increased by 1,</li>
+ * <li><i>max counter</i> - all counters are set to the maximum value of any counter.</li>
  * </ul>
  * A non-empty zero-indexed array A of M integers is given. This array represents consecutive operations:
  * <ul>

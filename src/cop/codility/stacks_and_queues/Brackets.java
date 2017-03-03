@@ -4,8 +4,8 @@ import java.util.Stack;
 
 /**
  * <h1>Brackets</h1>
- * <i>Determine whether a given string of parentheses is properly nested.</i><br>
- * <br>
+ * <i>Determine whether a given string of parentheses is properly nested.</i>
+ * <p/>
  * A string S consisting of N characters is considered to be <i>properly nested</i> if any of the following conditions is true:
  * <ul>
  * <li>S is empty;</li>

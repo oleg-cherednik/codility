@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * <h1>NumberOfDiscIntersections</h1>
- * <i>Compute the number of intersections in a sequence of discs.</i><br>
- * <br>
+ * <i>Compute the number of intersections in a sequence of discs.</i>
+ * <p/>
  * We draw N discs on a plane. The discs are numbered from 0 to N ? 1. A zero-indexed array A of N non-negative integers, specifying the radiuses of
  * the discs, is given. The J-th disc is drawn with its center at (J, 0) and radius A[J].
  * <br>

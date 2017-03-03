@@ -2,8 +2,8 @@ package cop.codility.prefix_sums;
 
 /**
  * <h1>PassingCars</h1>
- * <i>Count the number of passing cars on the road.</i><br>
- * <br>
+ * <i>Count the number of passing cars on the road.</i>
+ * <p/>
  * A non-empty zero-indexed array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.<br>
  * Array A contains only 0s and/or 1s:
  * <ul>

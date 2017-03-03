@@ -4,8 +4,8 @@ import java.util.Stack;
 
 /**
  * <h1>Fish</h1>
- * <i>N voracious fish are moving along a river. Calculate how many fish are alive.</i><br>
- * <br>
+ * <i>N voracious fish are moving along a river. Calculate how many fish are alive.</i>
+ * <p/>
  * You are given two non-empty zero-indexed arrays A and B consisting of N integers. Arrays A and B represent N voracious fish in a river, ordered
  * downstream along the flow of the river.<br>
  * The fish are numbered from 0 to N ? 1. If P and Q are two fish and P < Q, then fish P is initially upstream of fish Q. Initially, each fish has a

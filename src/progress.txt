@@ -44,6 +44,6 @@ Nesting - 100%
 Lesson 8: Leader
 ----------------
 Dominator - 100%
-*EquiLeader
+EquiLeader - 100%
 
 

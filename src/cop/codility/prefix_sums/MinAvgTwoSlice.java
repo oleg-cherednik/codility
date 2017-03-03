@@ -2,8 +2,8 @@ package cop.codility.prefix_sums;
 
 /**
  * <h1>MinAvgTwoSlice</h1>
- * <i>Find the minimal average of any slice containing at least two elements.</i><br>
- * <br>
+ * <i>Find the minimal average of any slice containing at least two elements.</i>
+ * <p/>
  * A non-empty zero-indexed array A consisting of N integers is given. A pair of integers (P, Q), such that 0 <= P < Q < N, is called a <i>slice</i>
  * of array A (notice that the slice contains at least two elements). The <i>average</i> of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q]
  * divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q ? P + 1).

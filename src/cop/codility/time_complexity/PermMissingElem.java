@@ -2,8 +2,8 @@ package cop.codility.time_complexity;
 
 /**
  * <h1>PermMissingElem</h1>
- * <i>Find the missing element in a given permutation.</i><br>
- * <br>
+ * <i>Find the missing element in a given permutation.</i>
+ * <p/>
  * A zero-indexed array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that
  * exactly one element is missing.<br>
  * Your goal is to find that missing element.

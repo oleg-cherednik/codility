@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * <h1>Triangle</h1>
- * <i>Determine where a triangle can be built from a given set of edges.</i><br>
- * <br>
+ * <i>Determine where a triangle can be built from a given set of edges.</i>
+ * <p/>
  * A zero-indexed array A consisting of N integers is given. A triplet (P, Q, R) is <i>triangular</i> if 0 <= P < Q < R, N and:
  * <ul>
  * <li>A[P] + A[Q] > A[R],</li>
@@ -57,11 +57,11 @@ public class Triangle {
         Arrays.sort(A);
 
         for (int i = 0; i < A.length - 2; i++) {
-            if ((long)A[i] + A[i + 1] <= A[i + 2])
+            if ((long) A[i] + A[i + 1] <= A[i + 2])
                 continue;
-            if ((long)A[i + 1] + A[i + 2] <= A[i])
+            if ((long) A[i + 1] + A[i + 2] <= A[i])
                 continue;
-            if ((long)A[i + 2] + A[i] > A[i + 2])
+            if ((long) A[i + 2] + A[i] > A[i + 2])
                 return 1;
         }
 
