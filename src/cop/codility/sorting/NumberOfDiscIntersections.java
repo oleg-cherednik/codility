@@ -1,7 +1,8 @@
 package cop.codility.sorting;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * <h1>NumberOfDiscIntersections</h1>
@@ -53,34 +54,45 @@ import java.util.TreeMap;
  */
 public class NumberOfDiscIntersections {
     public static int solution(int[] A) {
-        Map<Integer, Point> points = new TreeMap<>();
+        int l = A.length;
 
-        for (int i = 0; i < A.length; i++) {
-            int left = i - A[i];
-            int right = i + A[i];
+        long[] A1 = new long[l];
+        long[] A2 = new long[l];
 
-            if (!points.containsKey(left))
-                points.put(left, new Point(left));
-            if (!points.containsKey(right))
-                points.put(right, new Point(right));
-
-            points.get(left).open++;
-            points.get(right).close++;
+        for (int i = 0; i < l; i++) {
+            A1[i] = (long)A[i] + i;
+            A2[i] = -((long)A[i] - i);
         }
 
-        int cur = 0;
-        int res = 0;
+        Arrays.sort(A1);
+        Arrays.sort(A2);
 
-        for (Point point : points.values()) {
-            res += cur * point.open + combination(point.open, 2);
-            cur += point.open - point.close;
+        long cnt = 0;
 
-            if (res > 10000000)
-                return -1;
+        for (int i = A.length - 1; i >= 0; i--) {
+            int pos = Arrays.binarySearch(A2, A1[i]);
+            if (pos >= 0) {
+                while (pos < A.length && A2[pos] == A1[i]) {
+                    pos++;
+                }
+                cnt += pos;
+            } else { // element not there
+                int insertionPoint = -(pos + 1);
+                cnt += insertionPoint;
+            }
+
         }
 
-        return res;
+        long sub = (long)l * ((long)l + 1) / 2;
+        cnt -= sub;
+
+        if (cnt > 1e7)
+            return -1;
+
+        return (int)cnt;
     }
+
+    private static final Map<Integer, Map<Integer, Integer>> cache = new HashMap<>();
 
     private static int combination(int n, int k) {
         if (n < k)
@@ -89,7 +101,16 @@ public class NumberOfDiscIntersections {
             return 1;
         if (k == 1)
             return n;
-        return combination(n - 1, k - 1) + combination(n - 1, k);
+
+        if (!cache.containsKey(n))
+            cache.put(n, new HashMap<>());
+
+        Map<Integer, Integer> map = cache.get(n);
+
+        if (!map.containsKey(k))
+            map.put(k, combination(n - 1, k - 1) + combination(n - 1, k));
+
+        return map.get(k);
     }
 
     private static final class Point {

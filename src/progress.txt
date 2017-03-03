@@ -32,7 +32,7 @@ Lesson 6: Sorting
 Distinct - 100%
 MacProductOfThree - 100%
 Triangle - 100%
-NumberOfDiscIntersections
+NumberOfDiscIntersections - 100%
 
 Lesson 7: Stacks and Queues
 ---------------------------
