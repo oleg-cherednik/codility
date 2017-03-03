@@ -84,7 +84,7 @@ public class MaxCounters {
             if (A[i] == N + 1)
                 min = max;
             else {
-                counters[A[i] - 1] = min > 0 && counters[A[i] - 1] < min ? min + 1 : counters[A[i] - 1] + 1;
+                counters[A[i] - 1] = (min > 0 && counters[A[i] - 1] < min ? min : counters[A[i] - 1]) + 1;
                 max = Math.max(max, counters[A[i] - 1]);
             }
         }

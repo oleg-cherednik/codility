@@ -1,34 +1,40 @@
 Lesson 3: Time Complexity
-FrogJmp
-PermMissingElem
-TapeEquilibrium
+-------------------------
+FrogJmp - 100%
+PermMissingElem - 100%
+TapeEquilibrium - 100%
 
 Lesson 4: Counting Elements
-MissingInteger
-PermCheck
-GrogRiverOne
-MaxCounter
+---------------------------
+MissingInteger - 100%
+PermCheck - 100%
+FrogRiverOne - 100%
+MaxCounter - 100%
 
 Lesson 5: Prefix Sums
-CountDiv
-PassingCars
-GenomicRangeQuery
-MinAvgTwoSlice
+---------------------
+CountDiv - 100%
+PassingCars - 100%
+GenomicRangeQuery - 100%
+MinAvgTwoSlice - 100%
 
 Lesson 6: Sorting
-Distinct
-MacProductOfThree
-Triangle
+-----------------
+Distinct - 100%
+MacProductOfThree - 100%
+Triangle - 100%
 *NumberOfDiscIntersections
 
 Lesson 7: Stacks and Queues
+---------------------------
 Brackets
 *StoneWall
 Fish
 Nesting
 
 Lesson 8: Leader
-*Dominator
+----------------
+Dominator - 100%
 *EquiLeader
 
 

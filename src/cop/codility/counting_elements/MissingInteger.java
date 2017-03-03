@@ -27,7 +27,7 @@ import java.util.TreeSet;
  * Assume that:
  * <ul>
  * <li>N is an integer within the range [1..100,000];</li>
- * <li>each element of array A is an integer within the range [?2,147,483,648..2,147,483,647].</li>
+ * <li>each element of array A is an integer within the range [-2,147,483,648..2,147,483,647].</li>
  * </ul>
  * Complexity:
  * <ul>
