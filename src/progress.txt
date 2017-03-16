@@ -46,4 +46,15 @@ Lesson 8: Leader
 Dominator - 100%
 EquiLeader - 100%
 
+Lesson 9: Maximum slice problem
+-------------------------------
+MaxDoubleSliceSum
+MaxProfit
+MaxSliceSum
+
+Lesson 14: Binary search algorithm
+----------------------------------
+NailingPlanks
+MinMaxDivision
+
 
