@@ -1,8 +1,11 @@
 package cop.codility.binary_search_algorithm;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * <h1>NailingPlanks</h1>
@@ -89,45 +92,302 @@ import java.util.Set;
  */
 public class NailingPlanks {
     public static int solution(int[] A, int[] B, int[] C) {
-        Arrays.sort(C);
+        Set<Plank> planks = new TreeSet<>();
+        Set<Point> points = new TreeSet<>();
+        List<Plank> arr = new ArrayList<>();
+
+
+//        Arrays.sort(C);
         Set<Integer> res = new HashSet<>();
 
         for (int i = 0, total = A.length; i < total; i++) {
-            int a = getGreaterOrEqual(C, A[i]);
+            Plank plank = new Plank(A[i], B[i]);
+            planks.add(plank);
+            points.add(new PointA(plank));
+            points.add(new PointB(plank));
+        }
 
-            int b = 0;
-            b++;
+        LinkedList<Point> queue = new LinkedList<>();
 
+        for (Point point : points) {
+            if (point instanceof PointA)
+                queue.add(point);
+            else if (point instanceof PointB) {
+                if (queue.isEmpty())
+                    continue;
+
+                Point prv = queue.pollLast();
+
+
+                int a = 0;
+                a++;
+
+            }
+
+        }
+
+
+        int i = 0;
+        int[] a = new int[planks.size()];
+        int[] b = new int[planks.size()];
+
+        for (Plank plank : planks) {
+            a[i] = plank.a;
+            b[i] = plank.b;
+            i++;
         }
 
         return -1;
     }
 
-    private static int getGreaterOrEqual(int[] C, int pos) {
-        int prv;
-        int i = C.length / 2;
+    private static final class Plank implements Comparable<Plank> {
+        final int a;
+        final int b;
 
-        do {
-            if (C[i] == pos)
-                return pos;
+        Plank(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
 
-            prv = i;
+        @Override
+        public int compareTo(Plank plank) {
+            if (a < plank.a)
+                return -1;
+            if (a > plank.a)
+                return 1;
+            if (b < plank.b)
+                return -1;
+            if (b > plank.b)
+                return 1;
+            return 0;
+        }
+    }
 
-            if (C[i] > pos)
-                i /= 2;
-            else
-                i = (i + C.length) / 2;
-        } while (Math.abs(prv - i) <= 1);
+    private abstract static class Point implements Comparable<Point> {
+        final int pos;
+        final Plank plank;
 
-        int a = 0;
-        a++;
+        protected Point(int pos, Plank plank) {
+            this.pos = pos;
+            this.plank = plank;
+        }
+    }
 
-        return 1;
+    private static final class PointA extends Point {
+        PointA(Plank plank) {
+            super(plank.a, plank);
+        }
+
+        @Override
+        public int compareTo(Point point) {
+            return pos < point.pos ? -1 : 1;
+        }
+
+        public String toString() {
+            return String.format("a%d", pos);
+        }
+    }
+
+    private static final class PointB extends Point {
+        PointB(Plank plank) {
+            super(plank.b, plank);
+        }
+
+        @Override
+        public int compareTo(Point point) {
+            return pos < point.pos ? -1 : 1;
+        }
+
+        public String toString() {
+            return String.format("b%d", pos);
+        }
+    }
+
+    private static int greaterOrEqual(int[] C, int val) {
+        return binarySearch(C, val, 0, C.length - 1, true);
+    }
+
+    private static int lessOrEqual(int[] C, int val) {
+        return binarySearch(C, val, 0, C.length - 1, false);
+    }
+
+    private static int binarySearch(int[] C, int val, int min, int max, boolean right) {
+        if (min + 1 == max) {
+            if (C[min] >= val)
+                return C[min];
+            if (C[max] <= val)
+                return C[max];
+            return C[right ? max : min];
+        }
+
+        int i = (min + max) / 2;
+
+        if (C[i] == val)
+            return C[i];
+        if (C[i] > val)
+            return binarySearch(C, val, min, i, right);
+        return binarySearch(C, val, i, max, right);
     }
 
     public static void main(String... args) {
-        System.out.println(getGreaterOrEqual(new int[] { 1, 4, 7, 10, 13, 16, 19 }, 2));
-//        System.out.println(solution(new int[] { 1, 4, 5, 8 }, new int[] { 4, 5, 9, 10 }, new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }));
+//        System.out.println(greaterOrEqual(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }, 8));
+//        System.out.println(greaterOrEqual(new int[] { 1, 2, 3, 8, 9, 10, 11 }, 4));
+        System.out.println(solution(new int[] { 1, 2, 4, 6, 7, 11 }, new int[] { 10, 3, 5, 9, 8, 12 }, new int[] { 4, 6, 7, 10, 2 }));
+//        System.out.println(solution(new int[] { 1, 4, 5, 8 }, new int[] { 4, 5, 9, 10 }, new int[] { 4, 6, 7, 10, 2 }));
 //        new int[] { 4, 6, 7, 10, 2 }
     }
 }
+
+/*
+
+class Solution {
+    public int solution(int[] A, int[] B, int[] C) {
+        int[] ends = getPlankEnds(A, B, C);
+        int[] starts = getPlankStarts(ends);
+        int[] nails = getNailPositions(C, ends);
+
+        int result = -1;
+        Queue queue = new Queue(ends.length);
+        for (int i = 1; i < ends.length; i++) {
+            if (ends[i] > 0) {
+                if (!queue.isEmpty() && ends[queue.last()] == -1) {
+                     queue.removeLast();
+                }
+                ends[i] = -1;
+                queue.addLast(i);
+            } else if (queue.isEmpty()) {
+                continue;
+            }
+            if (nails[i] != 0) {
+                if (ends[queue.last()] == -1 || nails[i] < ends[queue.last()]) {
+                    ends[queue.last()] = nails[i];
+                    while (queue.size() > 1 && ends[queue.nextToLast()] > nails[i]) {
+                        queue.removeNextToLast();
+                    }
+                }
+            }
+            if (starts[i] != 0) {
+                int min = ends[queue.first()];
+                if (min == -1) {
+                    return -1;
+                }
+                if (starts[i] == queue.first()) {
+                    queue.removeFirst();
+                }
+                if (result == -1 || min > result) {
+                    result = min;
+                }
+            }
+        }
+        return result;
+    }
+
+    private int[] getPlankEnds(int[] A, int[] B, int[] C) {
+        int[] planks = new int[2 * C.length + 1];
+        for (int i = 0; i < A.length; i++) {
+            if (planks[A[i]] == 0 || B[i] < planks[A[i]]) {
+                planks[A[i]] = B[i];
+            }
+        }
+
+        Queue stack = new Queue(2 * C.length);
+        for (int i = 1; i < planks.length; i++) {
+            if (planks[i] != 0) {
+                while (!stack.isEmpty() && planks[i] <= planks[stack.last()]) {
+                    stack.removeLast();
+                }
+                stack.addLast(i);
+            }
+        }
+
+        int[] ends = new int[planks.length];
+        while (!stack.isEmpty()) {
+            int start = stack.removeLast();
+            ends[start] = planks[start];
+        }
+        return ends;
+    }
+
+    private int[] getPlankStarts(int[] ends) {
+		int[] starts = new int[ends.length];
+		for (int i = 1; i < ends.length; i++) {
+		    if (ends[i] > 0) {
+		        starts[ends[i]] = i;
+		    }
+		}
+        return starts;
+    }
+
+    private int[] getNailPositions(int[] C, int[] starts) {
+        int[] nails = new int[starts.length];
+        for (int i = 0; i < C.length; i++) {
+            if (nails[C[i]] == 0) {
+                nails[C[i]] = i + 1;
+            }
+        }
+        return nails;
+    }
+
+    private static class Queue {
+        private int[] array;
+        private int start = 0;
+        private int end = -1;
+        private int size = 0;
+
+        Queue(int capacity) {
+            this.array = new int[capacity];
+        }
+        void addLast(int element) {
+            size++;
+            end++;
+            if (end == array.length) {
+                end = 0;
+            }
+            array[end] = element;
+        }
+        int removeLast() {
+            size--;
+            int result = array[end--];
+            if (end < 0) {
+                end = array.length - 1;
+            }
+            return result;
+        }
+        int removeFirst() {
+            size--;
+            int result = array[start++];
+            if (start == array.length) {
+                start = 0;
+            }
+            return result;
+        }
+        int removeNextToLast() {
+            size--;
+            int index = nextToLastIndex();
+            int result = array[index];
+            array[index] = array[end];
+            end = index;
+            return result;
+        }
+        int last() {
+            return array[end];
+        }
+        int first() {
+            return array[start];
+        }
+        int nextToLast() {
+            return array[nextToLastIndex()];
+        }
+        boolean isEmpty() {
+            return size == 0;
+        }
+        int size() {
+            return size;
+        }
+        int nextToLastIndex() {
+            return end > 0 ? end - 1 : array.length - 1;
+        }
+    }
+}
+
+ */
