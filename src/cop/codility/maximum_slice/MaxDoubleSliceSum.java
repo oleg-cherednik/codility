@@ -67,18 +67,17 @@ package cop.codility.maximum_slice;
  */
 public class MaxDoubleSliceSum {
     public static int solution(int[] A) {
-        int[] K1 = new int[A.length];
-        int[] K2 = new int[A.length];
+        int[][] arr = new int[2][A.length];
 
-        for (int i = 1; i < A.length - 1; i++)
-            K1[i] = Math.max(K1[i - 1] + A[i], 0);
-        for (int i = A.length - 2; i > 0; i--)
-            K2[i] = Math.max(K2[i + 1] + A[i], 0);
+        for (int i = 1, j = A.length - 2; i < A.length - 1; i++, j--) {
+            arr[0][i] = Math.max(arr[0][i - 1] + A[i], 0);
+            arr[1][j] = Math.max(arr[1][j + 1] + A[j], 0);
+        }
 
         int max = 0;
 
         for (int i = 1; i < A.length - 1; i++)
-            max = Math.max(max, K1[i - 1] + K2[i + 1]);
+            max = Math.max(max, arr[0][i - 1] + arr[1][i + 1]);
 
         return max;
     }
