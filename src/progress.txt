@@ -55,6 +55,6 @@ MaxSliceSum
 Lesson 14: Binary search algorithm
 ----------------------------------
 NailingPlanks
-MinMaxDivision
+MinMaxDivision - 100%
 
 
