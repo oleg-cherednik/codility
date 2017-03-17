@@ -94,16 +94,13 @@ public class MinMaxDivision {
         return res;
     }
 
-    private static boolean check(int num, int K, int[] A) {
+    private static boolean check(int len, int K, int[] A) {
         int sum = 0;
 
         for (int a : A) {
-            if (a > num)
-                return false;
-
             sum += a;
 
-            if (sum > num) {
+            if (sum > len) {
                 sum = a;
 
                 if (--K == 0)
