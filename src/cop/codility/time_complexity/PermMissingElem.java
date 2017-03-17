@@ -41,16 +41,15 @@ package cop.codility.time_complexity;
  */
 public class PermMissingElem {
     public static int solution(int[] A) {
-        int[] count = new int[A.length + 1];
+        long sum = A.length + 1;
+        long cur = 0;
 
-        for(int val : A)
-            count[val - 1]++;
+        for (int i = 0; i < A.length; i++) {
+            sum += i + 1;
+            cur += A[i];
+        }
 
-        for(int i = 0; i < count.length; i++)
-            if(count[i] == 0)
-                return i + 1;
-
-        return -1;
+        return (int)(sum - cur);
     }
 
     public static void main(String... args) {
