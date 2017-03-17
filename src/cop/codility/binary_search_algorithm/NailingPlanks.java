@@ -127,16 +127,6 @@ public class NailingPlanks {
         }
 
 
-        int i = 0;
-        int[] a = new int[planks.size()];
-        int[] b = new int[planks.size()];
-
-        for (Plank plank : planks) {
-            a[i] = plank.a;
-            b[i] = plank.b;
-            i++;
-        }
-
         return -1;
     }
 
@@ -160,6 +150,11 @@ public class NailingPlanks {
             if (b > plank.b)
                 return 1;
             return 0;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("[%d:%d]", a, b);
         }
     }
 
@@ -230,9 +225,7 @@ public class NailingPlanks {
     }
 
     public static void main(String... args) {
-//        System.out.println(greaterOrEqual(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }, 8));
-//        System.out.println(greaterOrEqual(new int[] { 1, 2, 3, 8, 9, 10, 11 }, 4));
-        System.out.println(solution(new int[] { 1, 2, 4, 6, 7, 11 }, new int[] { 10, 3, 5, 9, 8, 12 }, new int[] { 4, 6, 7, 10, 2 }));
+        System.out.println(solution(new int[] { 1, 2, 2, 4, 7, 7 }, new int[] { 3, 9, 4, 6, 8, 10 }, new int[] { 4, 6, 7, 10, 2 }));
 //        System.out.println(solution(new int[] { 1, 4, 5, 8 }, new int[] { 4, 5, 9, 10 }, new int[] { 4, 6, 7, 10, 2 }));
 //        new int[] { 4, 6, 7, 10, 2 }
     }
