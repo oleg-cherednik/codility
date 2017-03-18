@@ -69,7 +69,7 @@ public class MaxDoubleSliceSum {
     public static int solution(int[] A) {
         int[][] arr = new int[2][A.length];
 
-        for (int i = 1, j = A.length - 2; i < A.length - 1; i++, j--) {
+        for (int i = 1, j = A.length - 2; j >= 0; i++, j--) {
             arr[0][i] = Math.max(arr[0][i - 1] + A[i], 0);
             arr[1][j] = Math.max(arr[1][j + 1] + A[j], 0);
         }

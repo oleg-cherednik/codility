@@ -48,8 +48,8 @@ EquiLeader - 100%
 
 Lesson 9: Maximum slice problem
 -------------------------------
-MaxDoubleSliceSum
-MaxProfit
+MaxDoubleSliceSum - 100%
+MaxProfit - 100%
 MaxSliceSum
 
 Lesson 14: Binary search algorithm
