@@ -52,9 +52,19 @@ MaxDoubleSliceSum - 100%
 MaxProfit - 100%
 MaxSliceSum - 100%
 
+Lesson 10: Prime and composite numbers
+--------------------------------------
+CountFactors - 100%
+MinPerimeterRectangle
+Peaks
+Flags
+
 Lesson 14: Binary search algorithm
 ----------------------------------
 NailingPlanks
 MinMaxDivision - 100%
+
+
+
 
 
