@@ -50,7 +50,7 @@ Lesson 9: Maximum slice problem
 -------------------------------
 MaxDoubleSliceSum - 100%
 MaxProfit - 100%
-MaxSliceSum
+MaxSliceSum - 100%
 
 Lesson 14: Binary search algorithm
 ----------------------------------
