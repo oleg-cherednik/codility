@@ -110,10 +110,9 @@ public class Peaks {
         if (peaks.isEmpty())
             return 0;
 
-        int res = 0;
         Set<Integer> tmp = new HashSet<>();
 
-        for (int i = 1, max = A.length / 2; i <= max; i++) {
+        for (int i = A.length / 2; i > 0; i--) {
             if (A.length % i != 0)
                 continue;
 
@@ -125,14 +124,14 @@ public class Peaks {
                 tmp.add(j / len);
 
             if (tmp.size() == i)
-                res = i;
+                return i;
         }
 
-        return res;
+        return 0;
     }
 
     public static void main(String... args) {
-        System.out.println(solution(new int[] { 1, 3, 2 }));
-        System.out.println(solution(new int[] { 1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2 }));
+        System.out.println(solution(new int[] { 1, 3, 2 }));    // 1
+        System.out.println(solution(new int[] { 1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2 })); // 3
     }
 }
