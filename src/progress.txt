@@ -55,7 +55,7 @@ MaxSliceSum - 100%
 Lesson 10: Prime and composite numbers
 --------------------------------------
 CountFactors - 100%
-MinPerimeterRectangle
+MinPerimeterRectangle - 100%
 Peaks
 Flags
 
