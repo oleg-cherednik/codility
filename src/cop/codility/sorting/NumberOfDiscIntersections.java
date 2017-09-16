@@ -21,6 +21,9 @@ import java.util.Arrays;
  * A[4] = 4
  * A[5] = 0
  * </pre>
+ * <pre>
+ * <img src="image.png"/>
+ * </pre>
  * There are eleven (unordered) pairs of discs that intersect, namely:
  * <ul>
  * <li>discs 1 and 4 intersect, and both intersect with all the other discs;</li>

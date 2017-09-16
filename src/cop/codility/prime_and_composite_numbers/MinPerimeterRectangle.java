@@ -1,4 +1,4 @@
-package cop.codility.prime_numbers;
+package cop.codility.prime_and_composite_numbers;
 
 /**
  * <h1>CountFactors</h1>

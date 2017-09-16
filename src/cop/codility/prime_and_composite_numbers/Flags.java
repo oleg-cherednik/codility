@@ -1,4 +1,4 @@
-package cop.codility.prime_numbers;
+package cop.codility.prime_and_composite_numbers;
 
 /**
  * <h1>Flags</h1>
@@ -29,7 +29,7 @@ package cop.codility.prime_numbers;
  * You are going on a trip to a range of mountains whose relative heights are represented by array A, as shown in a figure below. You have to choose
  * how many flags you should take with you. The goal is to set the maximum number of flags on the peaks, according to certain rules.
  * <pre>
- * <img src="img.png" alt="Foo">
+ * <img src="image.png"/>
  * </pre>
  * Flags can only be set on peaks. What's more, if you take K flags, then the distance between any two flags should be greater than or equal to K.
  * The distance between indices P and Q is the absolute value |P − Q|.

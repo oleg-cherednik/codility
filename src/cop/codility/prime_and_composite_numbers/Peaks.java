@@ -1,4 +1,4 @@
-package cop.codility.prime_numbers;
+package cop.codility.prime_and_composite_numbers;
 
 import java.util.HashSet;
 import java.util.Set;
