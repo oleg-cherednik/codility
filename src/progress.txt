@@ -30,7 +30,7 @@ MinAvgTwoSlice - 100%
 Lesson 6: Sorting
 -----------------
 Distinct - 100%
-MacProductOfThree - 100%
+MaxProductOfThree - 100%
 Triangle - 100%
 NumberOfDiscIntersections - 100%
 
@@ -58,6 +58,21 @@ CountFactors - 100%
 MinPerimeterRectangle - 100%
 Peaks - 100%
 Flags - 100%
+
+Lesson 11: Sieve of Eratosthenes
+--------------------------------------
+CountSemiprimes
+CountNonDivisible
+
+Lesson 12: Euclidean algorithm
+--------------------------------------
+ChocolatesByNumbers
+CommonPrimeDivisors
+
+Lesson 12: Fibonacci numbers
+--------------------------------------
+FibFrog
+Ladder
 
 Lesson 14: Binary search algorithm
 ----------------------------------

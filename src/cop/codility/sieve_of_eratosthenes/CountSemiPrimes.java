@@ -2,9 +2,7 @@ package cop.codility.sieve_of_eratosthenes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Oleg Cherednik
@@ -12,28 +10,14 @@ import java.util.Set;
  */
 public class CountSemiPrimes {
 
-    private static Set<Integer> semiPrimes = getSemiPrimes();
-
-    private static Set<Integer> getSemiPrimes() {
-        final int max = 50_000;
-        int[] primes = getPrimes(max);
-        Set<Integer> semiPrimes = new HashSet<>();
-
-        for (int i = 0; i < primes.length && primes[i] <= max; i++)
-            for (int j = 0; j < primes.length && primes[i] * primes[j] <= max; j++)
-                semiPrimes.add(primes[i] * primes[j]);
-
-        return semiPrimes;
-    }
-
-    private static int[] getPrimes(int max) {
+    private static List<Integer> getPrimes(int max) {
         List<Integer> primes = new ArrayList<>(max / 2);
 
         for (int i = 0; i < max; i++)
             if (isPrime(i))
                 primes.add(i);
 
-        return primes.stream().mapToInt(i -> i).toArray();
+        return primes;
     }
 
     private static boolean isPrime(int val) {
@@ -49,17 +33,35 @@ public class CountSemiPrimes {
         return true;
     }
 
+    private static boolean[] getSemiPrimes(int N) {
+        List<Integer> primes = getPrimes(N);
+        boolean[] semiPrimes = new boolean[N + 1];
+
+        for (int i = 0; i < primes.size(); i++) {
+            for (int j = 0; j < primes.size(); j++) {
+                int semiPrime = primes.get(i) * primes.get(j);
+
+                if (semiPrime > N)
+                    break;
+
+                semiPrimes[semiPrime] = true;
+            }
+        }
+
+        return semiPrimes;
+    }
+
     public static int[] solution(int N, int[] P, int[] Q) {
+        boolean[] semiPrimes = getSemiPrimes(N);
         int[] res = new int[P.length];
 
-        for (int i = 0; i < res.length; i++) {
-            final int j = i;
-            res[i] = (int)semiPrimes.stream().filter(semiPrime -> semiPrime >= P[j] && semiPrime <= Q[j]).count();
-        }
+        for (int i = 0; i < res.length; i++)
+            for (int j = P[i]; j <= Q[i]; j++)
+                if (semiPrimes[j])
+                    res[i]++;
 
         return res;
     }
-
 
     public static void main(String... args) {
         System.out.println(Arrays.toString(solution(26, new int[] { 1, 4, 16 }, new int[] { 26, 10, 20 }))); // [10, 4, 0]
