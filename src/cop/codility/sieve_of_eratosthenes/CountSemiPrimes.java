@@ -33,32 +33,37 @@ public class CountSemiPrimes {
         return true;
     }
 
-    private static boolean[] getSemiPrimes(int N) {
+    private static int[] getSemiPrimesPrefixSum(int N) {
         List<Integer> primes = getPrimes(N);
-        boolean[] semiPrimes = new boolean[N + 1];
+        int[] semiPrimes = new int[N + 1];
 
         for (int i = 0; i < primes.size(); i++) {
-            for (int j = 0; j < primes.size(); j++) {
-                int semiPrime = primes.get(i) * primes.get(j);
+            if (primes.get(i) > N)
+                break;
 
-                if (semiPrime > N)
+            for (int j = i; j < primes.size(); j++) {
+                if (primes.get(j) > N || N / primes.get(i) < primes.get(j))
                     break;
 
-                semiPrimes[semiPrime] = true;
+                int semiPrime = primes.get(i) * primes.get(j);
+
+                if (semiPrime <= N)
+                    semiPrimes[semiPrime] = 1;
             }
         }
+
+        for (int i = 0, cur = 0; i < semiPrimes.length; i++)
+            semiPrimes[i] = cur += semiPrimes[i];
 
         return semiPrimes;
     }
 
     public static int[] solution(int N, int[] P, int[] Q) {
-        boolean[] semiPrimes = getSemiPrimes(N);
+        int[] semiPrimes = getSemiPrimesPrefixSum(N);
         int[] res = new int[P.length];
 
         for (int i = 0; i < res.length; i++)
-            for (int j = P[i]; j <= Q[i]; j++)
-                if (semiPrimes[j])
-                    res[i]++;
+            res[i] = semiPrimes[Q[i]] - semiPrimes[P[i] - 1];
 
         return res;
     }
