@@ -32,21 +32,25 @@ import java.util.Arrays;
  * @since 03.03.2017
  */
 public class CyclicRotation {
+
     public static int[] solution(int[] A, int K) {
-        if(A.length == 0)
+        if (A.length == 0)
             return A;
 
         K %= A.length;
 
-        if (K <= 0)
-            return A;
-        for (int i = 0, j = A.length - 1; i < j; i++, j--)
-            swap(A, i, j);
-        for (int i = 0, j = K - 1; i < j; i++, j--)
-            swap(A, i, j);
-        for (int i = K, j = A.length - 1; i < j; i++, j--)
-            swap(A, i, j);
+        if (K >= 0) {
+            reverse(A, 0, A.length - 1);
+            reverse(A, 0, K - 1);
+            reverse(A, K, A.length - 1);
+        }
+
         return A;
+    }
+
+    private static void reverse(int[] arr, int hi, int lo) {
+        for (int i = hi, j = lo; i < j; i++, j--)
+            swap(arr, i, j);
     }
 
     private static void swap(int[] arr, int i, int j) {
@@ -62,4 +66,5 @@ public class CyclicRotation {
         System.out.println(Arrays.toString(solution(new int[] { 3, 8, 9, 7, 6 }, 3)));    // [9, 7, 6, 3, 8]
         System.out.println(Arrays.toString(solution(new int[] { 3, 8, 9, 7, 6 }, 8)));    // [9, 7, 6, 3, 8]
     }
+
 }
