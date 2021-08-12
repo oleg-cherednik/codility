@@ -1,11 +1,8 @@
 package cop.codility.sieve_of_eratosthenes;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -64,94 +61,30 @@ import java.util.Set;
 public class CountNonDivisible {
 
     public static int[] solution(int[] A) {
-        Set<Integer> unique = asSet(A);
-        List<Set<Integer>> divisors = computeDivisors(A.length * 2);
-        int occurrences[] = computeOccurrences(A);
-        int nonDivisors[] = new int[A.length];
+        int[][] D = new int[A.length * 2 + 1][2];
+
         for (int i = 0; i < A.length; i++) {
-            int value = A[i];
-            Set<Integer> d = divisors.get(value);
-            int totalOccurances = 0;
-            for (Integer divisor : d) {
-                if (unique.contains(divisor)) {
-                    totalOccurances += occurrences[divisor];
+            D[A[i]][0]++;
+            D[A[i]][1] = -1;
+        }
+
+        for (int i = 0; i < A.length; i++) {
+            if (D[A[i]][1] == -1) {
+                D[A[i]][1] = 0;
+                for (int j = 1; j <= Math.sqrt(A[i]); j++) {
+                    if (A[i] % j == 0 && A[i] / j != j) {
+                        D[A[i]][1] += D[j][0];
+                        D[A[i]][1] += D[A[i] / j][0];
+                    } else if (A[i] % j == 0 && A[i] / j == j) {
+                        D[A[i]][1] += D[j][0];
+                    }
                 }
             }
-            nonDivisors[i] = A.length - totalOccurances;
         }
-        return nonDivisors;
-    }
-
-
-    /**
-     * Returns a set containing all elements of the given array
-     * <p>
-     * Space: O(N)
-     * Time: O(N)
-     *
-     * @param A The input array
-     * @return The set
-     */
-    private static Set<Integer> asSet(int A[]) {
-        Set<Integer> result = new HashSet<Integer>();
-        for (int value : A) {
-            result.add(value);
-        }
-        return result;
-    }
-
-
-    /**
-     * Computes a list that contains for each i in [0...maxValue+1] a set
-     * with all divisors of i. This is basically an "Eratosthenes Sieve".
-     * But in addition to setting the entries of a list to 'false'
-     * (indicating that the respective numbers are non-prime), this
-     * methods inserts the divisors into the corresponding set.
-     * <p>
-     * Space: O(N) (?)
-     * Time: O(N*logN) (?)
-     *
-     * @param maxValue The maximum value
-     * @return The list
-     */
-    private static List<Set<Integer>> computeDivisors(int maxValue) {
-        List<Boolean> prime = new ArrayList<Boolean>();
-        prime.addAll(Collections.nCopies(maxValue + 1, Boolean.TRUE));
-        List<Set<Integer>> divisors = new ArrayList<Set<Integer>>();
-        for (int i = 0; i < maxValue + 1; i++) {
-            Set<Integer> d = new HashSet<Integer>();
-            d.add(1);
-            d.add(i);
-            divisors.add(d);
-        }
-        for (int i = 2; i <= maxValue; i++) {
-            int next = i + i;
-            while (next <= maxValue) {
-                divisors.get(next).addAll(divisors.get(i));
-                prime.set(next, Boolean.FALSE);
-                next += i;
-            }
-        }
-        return divisors;
-    }
-
-    /**
-     * Computes an array of length 2*A.length+1, where each entry i contains
-     * the number of occurrences of value i in array A
-     * <p>
-     * Space: O(N)
-     * Time: O(N)
-     *
-     * @param A The input array
-     * @return The occurrences array
-     */
-    private static int[] computeOccurrences(int A[]) {
-        int occurances[] = new int[A.length * 2 + 1];
         for (int i = 0; i < A.length; i++) {
-            int value = A[i];
-            occurances[value]++;
+            A[i] = A.length - D[A[i]][1];
         }
-        return occurances;
+        return A;
     }
 
     // --------------
