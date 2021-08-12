@@ -76,11 +76,13 @@ public class CountNonDivisible {
             count[a] = 0;
 
             for (int i = 1, sqrt = (int)Math.sqrt(a); i <= sqrt; i++) {
-                if (a % i == 0 && a / i != i) {
-                    count[a] += occurrence[i];
+                if (a % i != 0)
+                    continue;
+
+                count[a] += occurrence[i];
+
+                if (a / i != i)
                     count[a] += occurrence[a / i];
-                } else if (a % i == 0 && a / i == i)
-                    count[a] += occurrence[i];
             }
         }
 
