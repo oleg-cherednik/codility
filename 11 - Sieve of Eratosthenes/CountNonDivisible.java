@@ -1,10 +1,6 @@
 package cop.codility.sieve_of_eratosthenes;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * <h1>CountNonDivisible</h1>
@@ -61,104 +57,32 @@ import java.util.Set;
 public class CountNonDivisible {
 
     public static int[] solution(int[] A) {
-        int[] occurrence = new int[A.length * 2 + 1];
         int[] count = new int[A.length * 2 + 1];
+        int[] sum = new int[A.length * 2 + 1];
 
         for (int a : A) {
-            occurrence[a]++;
-            count[a] = -1;
+            count[a]++;
+            sum[a] = -1;
         }
 
         for (int a : A) {
-            if (count[a] != -1)
+            if (sum[a] != -1)
                 continue;
 
-            count[a] = 0;
+            sum[a] = 0;
 
-            for (int i = 1, sqrt = (int)Math.sqrt(a); i <= sqrt; i++) {
-                if (a % i != 0)
-                    continue;
-
-                count[a] += occurrence[i];
-
-                if (a / i != i)
-                    count[a] += occurrence[a / i];
-            }
+            for (int i = 1, sqrt = (int)Math.sqrt(a); i <= sqrt; i++)
+                if (a % i == 0)
+                    sum[a] += count[i] + (a / i != i ? count[a / i] : 0);
         }
 
         for (int i = 0; i < A.length; i++)
-            A[i] = A.length - count[A[i]];
+            A[i] = A.length - sum[A[i]];
 
         return A;
     }
 
-    // --------------
-    public static int[] solution1(int[] A) {
-        Map<Integer, Integer> histogram = histogram(A);
-        Map<Integer, Integer> cache = new HashMap<>();
-        int[] res = new int[A.length];
-
-        for (int i = 0; i < A.length; i++)
-            res[i] = cache.computeIfAbsent(A[i], a -> {
-                int sum = 0;
-
-                for (int div : divisors(a))
-                    sum += histogram.get(div);
-
-                return A.length - sum;
-            });
-
-        return res;
-    }
-
-    private static Map<Integer, Integer> histogram(int[] A) {
-        Map<Integer, Integer> map = new HashMap<>();
-
-        for (int a : A)
-            map.put(a, map.getOrDefault(a, 0) + 1);
-
-        return map;
-    }
-
-    private static Set<Integer> divisors(int a) {
-        Set<Integer> res = new HashSet<>();
-        Set<Integer> cache = new HashSet<>();
-
-        while (a > 1) {
-            for (int i = 2; i <= a; i++) {
-                if (a % i != 0)
-                    continue;
-
-                cache.clear();
-                cache.addAll(res);
-
-                for (int v : cache)
-                    res.add(i * v);
-
-                res.add(i);
-                a /= i;
-
-                break;
-            }
-        }
-
-        res.add(1);
-
-        return res;
-    }
-
     public static void main(String... args) {
-//        Random random = new Random();
-//        int N = 50_000;//random.nextInt(50_000);
-//        int[] arr = new int[N];
-//
-//        for (int i = 0; i < arr.length; i++)
-//            arr[i] = random.nextInt(2 * N);
-//
-//        System.out.println(arr.length);
-//        System.out.println(Arrays.toString(arr));
-
-
         System.out.println(Arrays.toString(solution(new int[] { 3, 1, 2, 3, 6 }))); // [2, 4, 3, 2, 0]
         System.out.println(Arrays.toString(solution(new int[] { 1, 1 }))); // [0, 0]
         System.out.println(Arrays.toString(solution(new int[] { 1, 2, 3, 4, 5, 6 }))); // [5, 4, 4, 3, 4, 2]

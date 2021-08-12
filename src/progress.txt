@@ -61,8 +61,8 @@ Flags - 100%
 
 Lesson 11: Sieve of Eratosthenes
 --------------------------------------
+CountNonDivisible - 100
 CountSemiprimes - 100%
-CountNonDivisible
 
 Lesson 12: Euclidean algorithm
 --------------------------------------
