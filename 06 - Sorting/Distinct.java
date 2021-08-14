@@ -1,8 +1,3 @@
-package cop.codility.sorting;
-
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * <h1>Distinct</h1>
  * <i>Compute number of distinct values in an array.</i>
@@ -37,17 +32,26 @@ import java.util.Set;
  * @since 04.11.2015
  */
 public class Distinct {
+
     public static int solution(int[] A) {
-        Set<Integer> arr = new HashSet<>();
+        boolean[] arr = new boolean[2 * 1_000_000 + 1];
+        int res = 0;
 
-        for (int var : A)
-            arr.add(var);
+        for (int a : A) {
+            int i = a + 1_000_000;
 
-        return arr.size();
+            if (!arr[i]) {
+                arr[a + 1_000_000] = true;
+                res++;
+            }
+        }
+
+        return res;
     }
 
     public static void main(String... args) {
-        System.out.println(solution(new int[] { 2, 1, 1, 2, 3, 1 }));
+        System.out.println(solution(new int[] { 2, 1, 1, 2, 3, 1 }));   // 3
     }
+
 }
 

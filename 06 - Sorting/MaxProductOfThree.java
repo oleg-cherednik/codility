@@ -1,5 +1,3 @@
-package cop.codility.sorting;
-
 /**
  * <h1>MaxProductOfThree</h1>
  * <i>Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).</i>
@@ -57,6 +55,7 @@ package cop.codility.sorting;
  * @since 24.10.2015
  */
 public class MaxProductOfThree {
+
     public static int solution(int[] A) {
         int[] arrMaxPos = { -2000, -2000, -2000 };
         int[] arrMinNeg = { 2000, 2000 };
@@ -73,7 +72,7 @@ public class MaxProductOfThree {
                     arrMaxPos[1] = val;
                 } else if (val >= arrMaxPos[2])
                     arrMaxPos[2] = val;
-            } else if (val < 0) {
+            } else {
                 if (val <= arrMinNeg[0]) {
                     arrMinNeg[1] = arrMinNeg[0];
                     arrMinNeg[0] = val;
@@ -116,5 +115,6 @@ public class MaxProductOfThree {
         System.out.println(solution(new int[] { 0, 1, 2, 3, 4, 5 }));
         System.out.println(solution(new int[] { -5, -4, 0, 0, 0 }));
     }
+
 }
 

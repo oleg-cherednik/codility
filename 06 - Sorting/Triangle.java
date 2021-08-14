@@ -1,5 +1,3 @@
-package cop.codility.sorting;
-
 import java.util.Arrays;
 
 /**
@@ -53,15 +51,16 @@ import java.util.Arrays;
  * @since 04.11.2015
  */
 public class Triangle {
+
     public static int solution(int[] A) {
         Arrays.sort(A);
 
         for (int i = 0; i < A.length - 2; i++) {
-            if ((long) A[i] + A[i + 1] <= A[i + 2])
+            if ((long)A[i] + A[i + 1] <= A[i + 2])
                 continue;
-            if ((long) A[i + 1] + A[i + 2] <= A[i])
+            if ((long)A[i + 1] + A[i + 2] <= A[i])
                 continue;
-            if ((long) A[i + 2] + A[i] > A[i + 2])
+            if ((long)A[i + 2] + A[i] > A[i + 2])
                 return 1;
         }
 
@@ -73,5 +72,6 @@ public class Triangle {
         System.out.println(solution(new int[] { 10, 50, 5, 1 }));
         System.out.println(solution(new int[] { 5, 3, 3 }));
     }
+
 }
 

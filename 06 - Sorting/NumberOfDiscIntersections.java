@@ -1,5 +1,3 @@
-package cop.codility.sorting;
-
 import java.util.Arrays;
 
 /**
