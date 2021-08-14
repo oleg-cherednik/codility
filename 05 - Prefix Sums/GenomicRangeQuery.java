@@ -1,5 +1,3 @@
-package cop.codility.prefix_sums;
-
 import java.util.Arrays;
 
 /**

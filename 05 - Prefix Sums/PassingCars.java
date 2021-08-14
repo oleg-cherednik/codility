@@ -1,5 +1,3 @@
-package cop.codility.prefix_sums;
-
 /**
  * <h1>PassingCars</h1>
  * <i>Count the number of passing cars on the road.</i>
@@ -56,6 +54,7 @@ package cop.codility.prefix_sums;
  * @since 15.10.2015
  */
 public class PassingCars {
+
     public static int solution(int[] A) {
         int count = 0;
         int inc = 0;
@@ -64,7 +63,7 @@ public class PassingCars {
             if (val == 0)
                 inc++;
             else {
-                if (count + inc > 1000000000)
+                if (count + inc > 1_000_000_000)
                     return -1;
 
                 count += inc;
@@ -77,5 +76,6 @@ public class PassingCars {
     public static void main(String... args) {
         System.out.println(solution(new int[] { 0, 1, 0, 1, 1 }));
     }
+
 }
 

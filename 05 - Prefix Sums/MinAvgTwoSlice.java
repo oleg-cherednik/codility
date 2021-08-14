@@ -1,5 +1,3 @@
-package cop.codility.prefix_sums;
-
 /**
  * <h1>MinAvgTwoSlice</h1>
  * <i>Find the minimal average of any slice containing at least two elements.</i>
@@ -61,6 +59,7 @@ package cop.codility.prefix_sums;
  * @since 15.10.2015
  */
 public class MinAvgTwoSlice {
+
     public static int solution(int[] A) {
         double avgMin = (A[0] + A[1]) / 2.0;
         double avg;
@@ -86,5 +85,6 @@ public class MinAvgTwoSlice {
         System.out.println(solution(new int[] { 4, 2, 2, 5, -5, 5, 8 }));
         System.out.println(solution(new int[] { -3, -5, -8, -4, -10 }));
     }
+
 }
 

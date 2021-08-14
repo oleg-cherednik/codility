@@ -1,5 +1,3 @@
-package cop.codility.prefix_sums;
-
 /**
  * <h1>CountDiv</h1>
  * <i>Compute number of integers divisible by k in range [a..b].</i>
@@ -36,7 +34,7 @@ public class CountDiv {
             i++;
         }
 
-        return i % K == 0 ? 1 + (int) Math.floor((B - i) / K) : 0;
+        return i % K == 0 ? 1 + (int) Math.floor((B - i) / (double)K) : 0;
     }
 
     public static void main(String... args) {
