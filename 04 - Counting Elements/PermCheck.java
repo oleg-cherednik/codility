@@ -1,5 +1,3 @@
-package cop.codility.counting_elements;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -65,6 +63,7 @@ import java.util.Set;
  * @since 13.10.2015
  */
 public class PermCheck {
+
     public static int solution(int[] A) {
         int N = 0;
         Set<Integer> positions = new HashSet<>();
@@ -83,5 +82,6 @@ public class PermCheck {
         System.out.println(solution(new int[] { 4, 1, 3, 2 }));
         System.out.println(solution(new int[] { 4, 1, 3 }));
     }
+
 }
 

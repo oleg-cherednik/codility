@@ -1,5 +1,3 @@
-package cop.codility.counting_elements;
-
 import java.util.Arrays;
 
 /**
@@ -75,6 +73,7 @@ import java.util.Arrays;
  * @since 13.10.2015
  */
 public class MaxCounters {
+
     public static int[] solution(int N, int[] A) {
         int max = 0;
         int min = 0;
@@ -99,5 +98,6 @@ public class MaxCounters {
     public static void main(String... args) {
         System.out.println(Arrays.toString(solution(5, new int[] { 3, 4, 4, 6, 1, 4, 4 })));
     }
+
 }
 

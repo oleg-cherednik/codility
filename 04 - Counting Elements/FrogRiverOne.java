@@ -1,5 +1,3 @@
-package cop.codility.counting_elements;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -65,6 +63,7 @@ import java.util.Set;
  * @since 13.10.2015
  */
 public class FrogRiverOne {
+
     public static int solution(int X, int[] A) {
         Set<Integer> positions = new HashSet<>();
 
@@ -82,5 +81,6 @@ public class FrogRiverOne {
         System.out.println(solution(5, new int[] { 1, 3, 1, 4, 2, 3, 5, 4 }));
         System.out.println(solution(3, new int[] { 1, 3, 1, 3, 2, 1, 3 }));
     }
+
 }
 

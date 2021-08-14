@@ -1,5 +1,3 @@
-package cop.codility.counting_elements;
-
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -40,6 +38,7 @@ import java.util.TreeSet;
  * @since 13.10.2015
  */
 public class MissingInteger {
+
     public static int solution(int[] A) {
         int min = 1;
         Set<Integer> numbers = new TreeSet<>();
@@ -59,5 +58,6 @@ public class MissingInteger {
     public static void main(String... args) {
         System.out.println(solution(new int[] { 1, 3, 6, 4, 1, 2 }));
     }
+
 }
 
