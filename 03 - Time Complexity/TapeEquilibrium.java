@@ -1,5 +1,3 @@
-package cop.codility.time_complexity;
-
 /**
  * <h1>TapeEquilibrium</h1>
  * <i>Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.</i>

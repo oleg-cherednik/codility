@@ -1,5 +1,3 @@
-package cop.codility.time_complexity;
-
 /**
  * <h1>PermMissingElem</h1>
  * <i>Find the missing element in a given permutation.</i>
