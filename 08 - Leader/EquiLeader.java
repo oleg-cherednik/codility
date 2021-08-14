@@ -1,5 +1,3 @@
-package cop.codility.leader;
-
 /**
  * <h1>EquiLeader</h1>
  * <i>Find the index S such that the leaders of the sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N - 1] are the same.</i>
@@ -63,15 +61,16 @@ package cop.codility.leader;
  * @since 03.03.2017
  */
 public class EquiLeader {
+
     public static int solution(int[] A) {
         int candidate = 0;
         int total = 0;
 
-        for (int i = 0; i < A.length; i++) {
+        for (int a : A) {
             if (total == 0) {
-                candidate = A[i];
+                candidate = a;
                 total++;
-            } else if (candidate == A[i])
+            } else if (candidate == a)
                 total++;
             else
                 total--;
@@ -112,4 +111,5 @@ public class EquiLeader {
     public static void main(String... args) {
         System.out.println(solution(new int[] { 4, 3, 4, 4, 4, 2 }));   // 2
     }
+
 }

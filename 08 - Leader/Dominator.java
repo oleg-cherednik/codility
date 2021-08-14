@@ -1,5 +1,3 @@
-package cop.codility.leader;
-
 /**
  * <h1>Dominator</h1>
  * <i>Find an index of an array such that its value occurs at more than half of indices in the array.</i>
