@@ -50,7 +50,7 @@ import java.util.Arrays;
  * </ul>
  *
  * @author Oleg Cherednik
- * @since 26.12.2018
+ * @since 13.08.2021
  */
 public class CountNonDivisible {
 
