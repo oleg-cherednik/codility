@@ -1,5 +1,3 @@
-package cop.codility.sieve_of_eratosthenes;
-
 import java.util.Arrays;
 
 /**
