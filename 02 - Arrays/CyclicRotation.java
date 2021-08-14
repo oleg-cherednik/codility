@@ -1,5 +1,3 @@
-package cop.codility.arrays;
-
 import java.util.Arrays;
 
 /**

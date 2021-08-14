@@ -1,5 +1,3 @@
-package cop.codility.arrays;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -55,6 +53,7 @@ import java.util.Set;
  * @since 03.03.2017
  */
 public class OddOccurrencesInArray {
+
     public static int solution(int[] A) {
         Set<Integer> set = new HashSet<>();
 
@@ -68,4 +67,5 @@ public class OddOccurrencesInArray {
     public static void main(String... args) {
         System.out.println(solution(new int[] { 9, 3, 9, 3, 9, 7, 9 }));    // 7
     }
+
 }
