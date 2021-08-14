@@ -1,5 +1,3 @@
-package cop.codility.prime_and_composite_numbers;
-
 /**
  * <h1>CountFactors</h1>
  * <i>Count factors of given number n.</i>
@@ -41,10 +39,11 @@ package cop.codility.prime_and_composite_numbers;
  * @since 19.03.2017
  */
 public class MinPerimeterRectangle {
+
     public static int solution(int N) {
         int res = Integer.MAX_VALUE;
 
-        for (int i = 1, sqrt = (int) Math.sqrt(N); i <= sqrt; i++)
+        for (int i = 1, sqrt = (int)Math.sqrt(N); i <= sqrt; i++)
             if (N % i == 0)
                 res = Math.min(res, 2 * (N / i + i));
 
@@ -54,4 +53,5 @@ public class MinPerimeterRectangle {
     public static void main(String... args) {
         System.out.println(solution(30));   // 22
     }
+
 }

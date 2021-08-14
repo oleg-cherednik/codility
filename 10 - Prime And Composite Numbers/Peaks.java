@@ -1,5 +1,3 @@
-package cop.codility.prime_and_composite_numbers;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -100,6 +98,7 @@ import java.util.Set;
  * @since 19.03.2017
  */
 public class Peaks {
+
     public static int solution(int[] A) {
         Set<Integer> peaks = new HashSet<>();
 
@@ -134,4 +133,5 @@ public class Peaks {
         System.out.println(solution(new int[] { 1, 3, 2 }));    // 1
         System.out.println(solution(new int[] { 1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2 })); // 3
     }
+
 }

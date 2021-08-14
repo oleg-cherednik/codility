@@ -1,5 +1,3 @@
-package cop.codility.prime_and_composite_numbers;
-
 /**
  * <h1>Flags</h1>
  * <i>Find the maximum number of flags that can be set on mountain peaks.</i>
@@ -83,6 +81,7 @@ package cop.codility.prime_and_composite_numbers;
  * @since 19.03.2017
  */
 public class Flags {
+
     public static int solution(int[] A) {
         if (A.length <= 2)
             return 0;
@@ -120,4 +119,5 @@ public class Flags {
         System.out.println(solution(new int[] {}));
         System.out.println(solution(new int[] { 1 }));
     }
+
 }

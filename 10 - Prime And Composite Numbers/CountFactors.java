@@ -1,5 +1,3 @@
-package cop.codility.prime_and_composite_numbers;
-
 /**
  * <h1>CountFactors</h1>
  * <i>Count factors of given number n.</i>
@@ -32,6 +30,7 @@ package cop.codility.prime_and_composite_numbers;
  * @since 19.03.2017
  */
 public class CountFactors {
+
     public static int solution(int N) {
         int res = 0;
         double sqrt = Math.sqrt(N);
@@ -40,7 +39,7 @@ public class CountFactors {
             if (N % i == 0)
                 res += 2;
 
-        if(sqrt == (int)sqrt)
+        if (sqrt == (int)sqrt)
             res--;
 
         return res;
@@ -51,4 +50,5 @@ public class CountFactors {
         System.out.println(solution(36)); // 9
         System.out.println(solution(24)); // 8
     }
+
 }
