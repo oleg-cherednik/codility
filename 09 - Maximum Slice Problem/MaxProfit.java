@@ -1,5 +1,3 @@
-package cop.codility.maximum_slice;
-
 /**
  * <h1>MaxProfit</h1>
  * <i>Given a log of stock prices compute the maximum possible earning.</i>

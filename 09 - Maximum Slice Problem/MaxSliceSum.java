@@ -1,5 +1,3 @@
-package cop.codility.maximum_slice;
-
 /**
  * <h1>MaxSliceSum</h1>
  * <i>Find a maximum sum of a compact subsequence of array elements.</i>
