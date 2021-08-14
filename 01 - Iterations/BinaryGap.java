@@ -1,5 +1,3 @@
-package cop.codility.iterations;
-
 /**
  * <h1>BinaryGap</h1>
  * <i>Find longest sequence of zeros in binary representation of an integer</i>
@@ -35,6 +33,7 @@ package cop.codility.iterations;
  * @since 03.03.2017
  */
 public class BinaryGap {
+
     public static int solution(int N) {
         int max = 0;
         int cur = 0;
@@ -58,4 +57,5 @@ public class BinaryGap {
         System.out.println(solution(15));   // 0
         System.out.println(solution(1041)); // 5
     }
+
 }
